@@ -5259,6 +5259,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194049921}
   m_Mesh: {fileID: 4300012, guid: 8537129dc3fbbe44186add4eea186b85, type: 3}
+--- !u!1001 &195583800
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1927095934725912876, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_Name
+      value: BA_First Person Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.124162
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.148
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927095934725912879, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: gravity
+      value: -30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
 --- !u!1 &199191802
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,7 +5371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 199191805}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 797681867}
 --- !u!95 &199191805
 Animator:
   serializedVersion: 5
@@ -7744,7 +7805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309140033}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7756,7 +7817,7 @@ Transform:
   - {fileID: 529999622}
   - {fileID: 2059324583}
   - {fileID: 1735119170}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1109876083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310612228
 GameObject:
@@ -9934,7 +9995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 396714251}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 797681867}
 --- !u!95 &396714251
 Animator:
   serializedVersion: 5
@@ -14299,7 +14360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 568014736}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 797681867}
 --- !u!95 &568014736
 Animator:
   serializedVersion: 5
@@ -18180,7 +18241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 743356549}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 797681867}
 --- !u!95 &743356549
 Animator:
   serializedVersion: 5
@@ -18297,7 +18358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749968090}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18315,7 +18376,7 @@ Transform:
   - {fileID: 180702922}
   - {fileID: 1470126794}
   - {fileID: 928481562}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1109876083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757333891
 GameObject:
@@ -19402,6 +19463,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796219133}
   m_Mesh: {fileID: 4300002, guid: 1e4c9d0deb3bcc144ae6e91318e143a7, type: 3}
+--- !u!4 &797681867 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1927095934725912877, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+  m_PrefabInstance: {fileID: 195583800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &798246007
 GameObject:
   m_ObjectHideFlags: 0
@@ -26580,6 +26646,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 22185708}
+  - {fileID: 1830730623}
+  - {fileID: 1259803159}
+  - {fileID: 309140034}
+  - {fileID: 2001063811}
+  - {fileID: 749968091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1113646104
@@ -29852,7 +29923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259803158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -29872,7 +29943,7 @@ Transform:
   - {fileID: 1822460996}
   - {fileID: 1810770935}
   - {fileID: 1054031256}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1109876083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1260137435
 PrefabInstance:
@@ -31293,7 +31364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 1331097472}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 797681867}
 --- !u!95 &1331097472
 Animator:
   serializedVersion: 5
@@ -39820,7 +39891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 1618539432}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 797681867}
 --- !u!95 &1618539432
 Animator:
   serializedVersion: 5
@@ -43752,7 +43823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1754001979
 AudioListener:
   m_ObjectHideFlags: 0
@@ -45304,8 +45375,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830730622}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.58, y: 0.00000047683716, z: -7.5}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.58, y: 0, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45313,7 +45384,7 @@ Transform:
   - {fileID: 1151417305}
   - {fileID: 355412427}
   - {fileID: 1236253558}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1109876083}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1836060263
 GameObject:
@@ -49017,7 +49088,7 @@ Transform:
   - {fileID: 1635516658}
   - {fileID: 1769509216}
   - {fileID: 241428823}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1109876083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010977220
 GameObject:
@@ -51580,8 +51651,4 @@ SceneRoots:
   - {fileID: 1754001981}
   - {fileID: 863875464}
   - {fileID: 1109876083}
-  - {fileID: 1830730623}
-  - {fileID: 1259803159}
-  - {fileID: 309140034}
-  - {fileID: 2001063811}
-  - {fileID: 749968091}
+  - {fileID: 195583800}
