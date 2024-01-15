@@ -5,31 +5,39 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     [SerializeField] Transform destination;
+    public GameObject[] Triggers = new GameObject[5];
+    public Transform[] Destinations = new Transform[5];
+    //public List<GameObject> Triggers = new List<GameObject>();
 
-    void OnDrawGizmos()
+    //void ondrawgizmos()
+    //{
+    //    gizmos.color = color.white;
+    //    gizmos.drawwiresphere(destination.position, 0.4f);
+    //    var direction = destination.transformdirection(vector3.forward);
+    //    gizmos.drawray(destination.position, direction);
+    //}
+
+    void Start()
     {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(destination.position, 0.4f);
-        var direction = destination.TransformDirection(Vector3.forward);
-        Gizmos.DrawRay(destination.position, direction);
+
     }
+
+    void Update()
+    {
+
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent<PlayerController>(out var player))
         {
-            player.Teleport(destination.transform.position);
+            player.Teleport(destination.position);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void RandomTeleport()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
+    
 }
