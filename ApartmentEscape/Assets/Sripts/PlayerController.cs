@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameManager gm;
     public CharacterController controller;
 
     public float speed = 5f;
     public float gravity = -30f;
+
+    private float f = 1f;
 
     Vector3 velocity;
 
@@ -34,5 +37,14 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
         Physics.SyncTransforms();
         velocity = Vector3.zero;
+    }
+    public void TeleportY(Vector3 position)
+    {
+        
+        transform.position = new Vector3(transform.position.x + f, position.y, transform.position.z);
+        Physics.SyncTransforms();
+        velocity = Vector3.zero;
+        //gm.isTeleported = true;
+        //Debug.Log("isTeleported = " + gm.isTeleported);
     }
 }

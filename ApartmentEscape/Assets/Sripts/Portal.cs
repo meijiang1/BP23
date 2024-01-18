@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] Transform destination;
-    public GameObject[] Triggers = new GameObject[5];
-    public Transform[] Destinations = new Transform[5];
-    //public List<GameObject> Triggers = new List<GameObject>();
-
-    //void ondrawgizmos()
-    //{
-    //    gizmos.color = color.white;
-    //    gizmos.drawwiresphere(destination.position, 0.4f);
-    //    var direction = destination.transformdirection(vector3.forward);
-    //    gizmos.drawray(destination.position, direction);
-    //}
+    public GameManager gm;
+    public Destinations d;
+    public Transform randomDestination;
+    public Transform destinationBack;
+    
 
     void Start()
     {
@@ -29,15 +22,165 @@ public class Portal : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent<PlayerController>(out var player))
+        //if (gm.isTeleporting == false)
         {
-            player.Teleport(destination.position);
+            if (other.CompareTag("Player") && other.TryGetComponent<PlayerController>(out var player))
+            {
+                if (gm.currentRoom != null)
+                {
+                    if (gameObject.CompareTag(gm.currentRoom.tag)) //if tag portal == tag room where player at
+                    {
+                        RandomDestination();
+                        player.Teleport(randomDestination.position);
+                        Debug.Log("Go to next random room");
+                    }
+                    else
+                    {
+                        if (gm.previousRoom != null)
+                        {
+                            DestinationBack();
+                            player.Teleport(destinationBack.position);
+                            Debug.Log("Go to previous room");
+                        }
+                    }
+                    gm.previousRoom = gm.currentRoom;
+                    //gm.isTeleporting = true;
+                    gm.teleportCount++;
+                    Debug.Log(gm.teleportCount);
+                }
+            }
         }
     }
 
-    void RandomTeleport()
-    {
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player") && other.TryGetComponent<PlayerController>(out var player))
+    //    {
+    //        gm.isTeleporting = false;
+    //        Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    //    }
+    //}
 
+    Transform RandomDestination()
+    {
+        if (gm.isInNormalRoom)
+        {
+            switch (gm.currentRoom.tag)
+            {
+                case "Entrance":
+                    randomDestination = d.DestinationsKitchen[Random.Range(0, d.DestinationsKitchen.Length)];
+                    Debug.Log("case entrance, random kitchen");
+                    break;
+                case "Kitchen":
+                    randomDestination = d.DestinationsLiving[Random.Range(0, d.DestinationsLiving.Length)];
+                    Debug.Log("case kitchen, random living");
+                    break;
+                case "Living":
+                    randomDestination = d.DestinationsBathroom[Random.Range(0, d.DestinationsBathroom.Length)];
+                    Debug.Log("case living, random bathroom");
+                    break;
+                case "Bathroom":
+                    randomDestination = d.DestinationsBedroom[Random.Range(0, d.DestinationsBedroom.Length)];
+                    Debug.Log("case bathroom, random bedroom");
+                    break;
+                case "Bedroom":
+                    randomDestination = d.EntranceDestination;
+                    Debug.Log("case bedroom, entrance");
+                    break;
+                default:
+                    Debug.Log("case default, entrance");
+                    return d.DefaultDestination;   
+            }
+        }
+        else
+        {
+            switch (gm.currentRoom.tag)
+            {
+                case "Entrance":
+                    randomDestination = d.DestinationsKitchen[Random.Range(1, d.DestinationsKitchen.Length)];
+                    break;
+                case "Kitchen":
+                    randomDestination = d.DestinationsLiving[Random.Range(1, d.DestinationsLiving.Length)];
+                    break;
+                case "Living":
+                    randomDestination = d.DestinationsBathroom[Random.Range(1, d.DestinationsBathroom.Length)];
+                    break;
+                case "Bathroom":
+                    randomDestination = d.DestinationsBedroom[Random.Range(1, d.DestinationsBedroom.Length)];
+                    break;
+                case "Bedroom":
+                    randomDestination = d.EntranceDestination;
+                    break;
+                default:
+                    return d.DefaultDestination;
+            }
+        }
+        return randomDestination;
     }
-    
+
+    Transform DestinationBack()
+    {
+        if (gm.isInNormalRoom)
+        {
+            switch (gm.currentRoom.tag)
+            {
+                case "Kitchen":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log(destinationBack);
+                    Debug.Log("case kitchen, back to entrance");
+                    break;
+                case "Living":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case living, back to kitchen");
+                    break;
+                case "Bathroom":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case bathroom, back to living");
+                    break;
+                case "Bedroom":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case bedroom, back to bathroom");
+                    break;
+                case "Entrance":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case entrance, back to bedroom");
+                    break;
+                default:
+                    Debug.Log("case default, entrance");
+                    return d.DefaultDestination;
+            }
+        }
+        else
+        {
+            switch (gm.currentRoom.tag)
+            {
+                case "Kitchen":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log(destinationBack);
+                    Debug.Log("case kitchen, back to entrance");
+                    break;
+                case "Living":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case living, back to kitchen");
+                    break;
+                case "Bathroom":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case bathroom, back to living");
+                    break;
+                case "Bedroom":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case bedroom, back to bathroom");
+                    break;
+                case "Entrance":
+                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    Debug.Log("case entrance, back to bedroom");
+                    break;
+                default:
+                    Debug.Log("case default, entrance");
+                    return d.DefaultDestination;
+            }
+        }
+        return destinationBack;
+    }
+
 }
