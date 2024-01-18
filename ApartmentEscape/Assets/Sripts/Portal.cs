@@ -125,24 +125,39 @@ public class Portal : MonoBehaviour
             switch (gm.currentRoom.tag)
             {
                 case "Kitchen":
-                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    if (gm.playerPathRooms[0] != null)
+                    {
+                        destinationBack = gm.playerPathRooms[0].transform.GetChild(0).transform;
+                    }
                     Debug.Log(destinationBack);
                     Debug.Log("case kitchen, back to entrance");
                     break;
                 case "Living":
-                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    if (gm.playerPathRooms[1] != null)
+                    {
+                        destinationBack = gm.playerPathRooms[1].transform.GetChild(0).transform;
+                    }
                     Debug.Log("case living, back to kitchen");
                     break;
                 case "Bathroom":
-                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    if (gm.playerPathRooms[2] != null)
+                    {
+                        destinationBack = gm.playerPathRooms[2].transform.GetChild(0).transform;
+                    }
                     Debug.Log("case bathroom, back to living");
                     break;
                 case "Bedroom":
-                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    if (gm.playerPathRooms[3] != null)
+                    {
+                        destinationBack = gm.playerPathRooms[3].transform.GetChild(0).transform;
+                    }
                     Debug.Log("case bedroom, back to bathroom");
                     break;
                 case "Entrance":
-                    destinationBack = gm.previousRoom.transform.GetChild(0).transform;
+                    if (gm.playerPathRooms[4] != null)
+                    {
+                        destinationBack = gm.playerPathRooms[4].transform.GetChild(0).transform;
+                    }
                     Debug.Log("case entrance, back to bedroom");
                     break;
                 default:

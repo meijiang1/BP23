@@ -5,8 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject portals;
+
     public GameObject currentRoom = null;
     public GameObject previousRoom = null;
+
+    public GameObject[] playerPathRooms = new GameObject[5];
+
     public bool isInNormalRoom = true;
     public bool isTeleported = false;
     public bool isTeleporting = false;
@@ -14,7 +18,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()
