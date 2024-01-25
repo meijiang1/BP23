@@ -83,7 +83,7 @@ public class Portal : MonoBehaviour
                 Debug.Log("case living, random bathroom");
                 break;
             case "Bathroom":
-                if (gm.isRoomCorrect[4])
+                if (gm.isRoomCorrect[3])
                 {
                     destinationForth = d.DestinationsBedroom[Random.Range(0, d.DestinationsBedroom.Length)];
                 }
