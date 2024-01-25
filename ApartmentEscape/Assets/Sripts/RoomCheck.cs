@@ -40,9 +40,4 @@ public class RoomCheck : MonoBehaviour
                 break;
         }
     }
-
-    void CheckRoom()
-    {
-        
-    }
 }
