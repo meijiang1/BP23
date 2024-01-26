@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+
     //set in scene
+    public GameObject block;
     public GameObject portals;
     public GameObject[] correctRooms = new GameObject[5];
-    
     //adjust with code
     public bool[] isRoomCorrect = new bool[5] {false, false, false, false, false};
     public int correctRoomCount = 0;
@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        block.SetActive(true);
     }
 
     void Update()
     {
+        if (playerPathRooms[4] != null) { block.SetActive(false); }
         if (Input.GetKeyDown(KeyCode.C)) { Debug.Log("Current room: " + currentRoom.name + currentRoom.tag); }
         if (Input.GetKeyDown(KeyCode.P)) { Debug.Log("Previous room: " + previousRoom.name + previousRoom.tag); }
         if (Input.GetKeyDown(KeyCode.Y)) { Debug.Log("teleportCount = " + teleportCount); }

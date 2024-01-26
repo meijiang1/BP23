@@ -24,6 +24,8 @@ public class WinLose : MonoBehaviour
         {
             if (IsAllRoomCorrect())
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene(2);
                 Debug.Log("Player Win!");
             }
